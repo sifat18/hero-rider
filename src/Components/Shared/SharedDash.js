@@ -1,7 +1,8 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../Context/useAuth';
 import './share.css'
 const SharedDash = () => {
     const togle = () => {
@@ -12,42 +13,33 @@ const SharedDash = () => {
             el.classList.toggle("toggled");
         };
     }
+
+    const { user, logOut, admin } = useAuth()
     return (
         <Container fluid className=' prim-bg d-flex' id="wrapper">
             <Row id="sidebar-wrapper">
-                <Container className='text-center  siding'>
+                <Container className='text-center bg-white  sw'>
+                    <div className="sidebar-heading  text-center py-4 primary-text fs-4 fw-bold text-uppercase">
+                        <i class="fas fa-user-secret"></i>{user.displayName}
+                    </div>
+                    <ListGroup variant="flush" className='me-5'>
+                        <NavLink to='/home' ><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={"home"} alt='' /> Home</ListGroup.Item></NavLink>
+                        {/* user routes*/}
+                        {!admin && <div>
+                            <NavLink to={`/pay`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cash'} height='20' width='20' alt='' /> Pay</ListGroup.Item></NavLink>
+                            <NavLink to={`/myOrder`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> My Order</ListGroup.Item></NavLink>
+                            <NavLink to={`/review`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'reviw'} height='20' width='20' alt='' />Review</ListGroup.Item></NavLink>
+                        </div>}
+                        {/* admin routes*/}
+                        {admin && <div>
 
-
-                    <nav className="nav mt-5 pt-5">
-                        <ul className="nav-items">
-                            <li className="nav-item">
-                                <NavLink className={({ isActive }) => isActive ? "active" : ''} to="/" >
-                                    Home
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className={({ isActive }) => isActive ? "active" : ''} to="/about" >
-                                    <img src="{abt}" alt="" width='25' height='25' />  About
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className={({ isActive }) => isActive ? "active" : ''} to="/project" >
-                                    <img src="{proj}" alt="" width='25' height='32' /> Projects
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className={({ isActive }) => isActive ? "active" : ''} to="/blogs" >
-                                    <img src="{blog}" alt="" width='25' height='32' /> Blogs
-                                </NavLink>
-                            </li>
-
-                            <li className="nav-item">
-                                <NavLink className={({ isActive }) => isActive ? "active" : ''} to="/contact" >
-                                    <img src="{con}" alt="" width='25' height='30' style={{ marginTop: "-10px" }} /> Contact
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </nav>
+                            <NavLink to={`/makeAdmin`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
+                            <NavLink to={`/addProduct`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Add Product</ListGroup.Item></NavLink>
+                            <NavLink to={`/manageAllOrder`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'order'} height='20' width='20' alt='' /> Manage AllOrders</ListGroup.Item></NavLink>
+                            <NavLink to={`/manageProducts`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'delet'} height='20' width='20' alt='' /> Manage Product</ListGroup.Item></NavLink>
+                        </div>}
+                        <ListGroup.Item onClick={logOut} className='point '><img src={'out'} height='20' width='20' alt='' /> LogOut</ListGroup.Item>
+                    </ListGroup>
                 </Container>
             </Row >
             <Row id="page-content-wrapper">

@@ -47,7 +47,6 @@ const Rider = () => {
         formData.append('nidPic', nidPic)
         formData.append('profilePic', profilePic)
 
-        // createUser(registerData.name, registerData.email, registerData.pass, history);
         fetch('http://localhost:8000/rider', {
             method: 'POST',
             body: formData
@@ -61,6 +60,8 @@ const Rider = () => {
             .catch(error => {
                 console.error('Error:', error);
             });
+        createUser(registerData.name, registerData.email, registerData.pass, history);
+
     }
     return (
         <Container fluid className='explore-body'>

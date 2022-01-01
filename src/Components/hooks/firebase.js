@@ -15,7 +15,7 @@ const useFirebase = () => {
 
     // const provider = new GoogleAuthProvider();
     // create user
-    const createUser = (name, email, password, history) => {
+    const createUser = (name, email, password, navigate) => {
         setisLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -23,9 +23,9 @@ const useFirebase = () => {
                 seterror('');
                 const newUser = { email, displayName: name };
                 setuser(newUser);
-                saveUser(email, name, 'POST');
+                // saveUser(email, name, 'POST');
                 setName(name)
-                history.replace('/');
+                navigate('/dashboard');
                 // ...
             })
             .catch((error) => {
@@ -68,7 +68,7 @@ const useFirebase = () => {
                 seterror('')
                 setuser(userCredential.user);
                 const destination = location?.state?.from || '/dashboard';
-                history.replace(destination);
+                history(destination);
                 // ...
             })
             .catch((error) => {
@@ -114,17 +114,17 @@ const useFirebase = () => {
         });
     }
 
-    const saveUser = (email, displayName, method) => {
-        const userData = { email, displayName };
-        fetch('https://vast-everglades-95998.herokuapp.com/user', {
-            method: method,
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(userData)
-        })
-            .then()
-    }
+    // const saveUser = (email, displayName, method) => {
+    //     const userData = { email, displayName };
+    //     fetch('https://vast-everglades-95998.herokuapp.com/user', {
+    //         method: method,
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(userData)
+    //     })
+    //         .then()
+    // }
     return {
         user,
         isLoading,
