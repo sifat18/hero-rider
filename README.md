@@ -1,12 +1,15 @@
-# Getting Started with Create React App
+# Welcome to Hero Rider APP 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the live link [Hero-rider](https://hero-rider-cb16a.web.app/).
 
-## Available Scripts
+## What is this project about?
 
-In the project directory, you can run:
-
-### `npm start`
+Hero Rider’ is a ride sharing startup. A driver who has his/her own or rented car can give rides to other people. They also provide driving lessons services. this site is build  with node js, react js and mongodb -
+### Functionalities
+- implementation of 2 type registration
+- one admin to manage all the data
+- admin filter the data based on name, email and search
+- photo upload by using base64
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
