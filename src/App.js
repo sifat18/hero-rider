@@ -14,6 +14,8 @@ import Nopage from './Components/Nopage/Nopage';
 import Authprovider from './Components/AuthProvider/Authprovider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import RiderShow from './Components/RiderShow/RiderShow';
+import NewDrivers from './Components/NewDriver/NewDrivers';
+import Welcome from './Components/Welcome/Welcome';
 function App() {
   return (
     <Authprovider className="App">
@@ -23,8 +25,10 @@ function App() {
           <Route path="/riderRegister" element={<Rider />} />
           <Route path="/driveRegister" element={<Driving />} />
           <Route path="/dashboard" element={<PrivateRoute><SharedDash /></PrivateRoute>} >
-            <Route path="/dashboard" element={<Home />} />
+            <Route path="/dashboard" element={<Welcome />} />
+            <Route path="/dashboard/admin" element={<Home />} />
             <Route path="/dashboard/riders" element={<RiderShow />} />
+            <Route path="/dashboard/newDrivers" element={<NewDrivers />} />
             {/* <Route path="/about" element={<About />} />
             <Route path="/project" element={<Project />} />
             <Route path="/contact" element={<Contact />} />

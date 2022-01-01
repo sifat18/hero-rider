@@ -17,7 +17,7 @@ const Home = () => {
     const handleAddAdmin = e => {
         e.preventDefault()
         console.log(email)
-        axios.put(`http://localhost:8000/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
+        axios.put(`https://hidden-reef-13109.herokuapp.com/admin/${email}`).then(res => res.data.modifiedCount ? handleShow() : '')
 
     }
     return (

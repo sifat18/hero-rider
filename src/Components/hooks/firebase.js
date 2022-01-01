@@ -13,7 +13,6 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    // const provider = new GoogleAuthProvider();
     // create user
     const createUser = (name, email, password, navigate) => {
         setisLoading(true)
@@ -43,21 +42,6 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, { displayName: name })
             .then(result => { });
     }
-    // google sign
-    // const signGoogle = (location, history) => {
-    //     setisLoading(true)
-
-    //     signInWithPopup(auth, provider)
-    //         .then((result) => {
-    //             const user = result.user;
-    //             saveUser(user.email, user.displayName, 'PUT');
-    //             seterror('');
-    //             const destination = location?.state?.from || '/';
-    //             history.replace(destination);
-    //         }).catch((error) => {
-    //             seterror(error.message);
-    //         }).finally(() => setisLoading(false));
-    // }
 
     // pass sign in
     const emailPass = (email, password, location, history) => {
@@ -97,7 +81,7 @@ const useFirebase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/user/${user.email}`)
+        fetch(`https://hidden-reef-13109.herokuapp.com/user/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -116,7 +100,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
         const userData = { email, displayName };
-        fetch('http://localhost:8000/user', {
+        fetch('https://hidden-reef-13109.herokuapp.com/user', {
             method: method,
             headers: {
                 'content-type': 'application/json'

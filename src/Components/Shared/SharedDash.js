@@ -33,10 +33,10 @@ const SharedDash = () => {
                         {/* admin routes*/}
                         {admin && <div>
 
-                            <NavLink to={`/dashboard`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
-                            <NavLink to={`/addProduct`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Add Product</ListGroup.Item></NavLink>
-                            <NavLink to={`/manageAllOrder`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'order'} height='20' width='20' alt='' /> Manage AllOrders</ListGroup.Item></NavLink>
-                            <NavLink to={`/manageProducts`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'delet'} height='20' width='20' alt='' /> Manage Product</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/admin`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/riders`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Registered Riders </ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/newDrivers`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'order'} height='20' width='20' alt='' /> Registered New Drivers</ListGroup.Item></NavLink>
+                            {/* <NavLink to={`/manageProducts`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'delet'} height='20' width='20' alt='' /> Manage Product</ListGroup.Item></NavLink> */}
                         </div>}
                         <ListGroup.Item onClick={logOut} className='point '><img src={'out'} height='20' width='20' alt='' /> LogOut</ListGroup.Item>
                     </ListGroup>

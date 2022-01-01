@@ -47,7 +47,7 @@ const Rider = () => {
         formData.append('nidPic', nidPic)
         formData.append('profilePic', profilePic)
 
-        fetch('http://localhost:8000/rider', {
+        fetch('https://hidden-reef-13109.herokuapp.com/rider', {
             method: 'POST',
             body: formData
         })
