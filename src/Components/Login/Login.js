@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 import pic1 from './enter.svg';
 import pic2 from './login.svg';
-import google from './icons8-google.svg';
 import useAuth from '../Context/useAuth';
 import './login.css'
 const Login = () => {
@@ -43,10 +42,11 @@ const Login = () => {
 
                     <button className='inputs btncolr  mt-2 fs-3 mb-5'>Login <img src={pic2} alt="" height='30' width='30' /></button>
                 </form>
-                <div className='text-center mt-5 '>
-                    <p className='fs-3 fw-nromal text-success'>New user? <NavLink to='/register'>Click me</NavLink></p>
-                    <p className='text-white'>-------OR------</p>
-                    <button className='btn bg-google border border-1 mb-5 text-white' onClick={"handleLogin"} > <img src={google} alt="" height='30' width='30' /> Google Sign In</button>
+                <div className='text-center mt-3 '>
+                    <p className='fs-3 fw-nromal text-success'>New user? </p>
+                    {/* <NavLink to='/register'>Click me</NavLink></p> */}
+                    <NavLink to='/riderRegister'> <button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as Rider</button></NavLink>
+                    <NavLink to='/driveRegister'><button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as NewDriver</button></NavLink>
                 </div>
             </Container>
         </Container>
