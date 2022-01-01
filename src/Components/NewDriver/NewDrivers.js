@@ -4,6 +4,8 @@ import { Container, Table, } from 'react-bootstrap';
 const NewDrivers = () => {
     let count = 0;
     // state variables 
+    const [display, setDisplay] = useState([])
+
     const [newDriver, setnewDriver] = useState([])
     const size = 10;
     const [page, setPage] = useState(0);
@@ -20,10 +22,29 @@ const NewDrivers = () => {
         })
 
     }, [page])
+    useEffect(() => {
+        setDisplay(newDriver);
+    }, [newDriver]);
+
+    const handlesearch = event => {
+        // getting text value
+        let text = event.target.value;
+        // filtering the material type
+        let result = newDriver.filter(ride => ride.fullName.toLowerCase().includes(text.toLowerCase()))
+        // setting to display
+        setDisplay(result);
+        // testing
+        // console.log(result)
+    }
     return (
         <Container data-aos="flip-right" fluid className='pt-3   text-center allorderbg'>
             <h2 className='text-center '> Registered Drivers for lesson</h2>
-            <hr className='d-block w-50 mb-5 mx-auto' />  <Table responsive striped bordered hover >
+            <hr className='d-block w-50 mb-5 mx-auto' />
+            <div className="searchDiv h-25 py-4 ">
+                <h2 className='fs-2 fw-bold text-light mt-3'>Search</h2>
+                <input className='search w-50' onChange={handlesearch} placeholder='Search by name' type="text" name="search" id="search" />
+            </div>
+            <Table responsive striped bordered hover >
                 {/* table header */}
                 <thead>
                     <tr className='text-center'>
@@ -38,7 +59,7 @@ const NewDrivers = () => {
                 </thead>
                 <tbody>
                     {/* looping data */}
-                    {newDriver.map(driver =>
+                    {display.map(driver =>
                         <tr key={driver._id} className='text-center'>
                             <td className='fs-4 text-white '>{++count}</td>
                             <td className='fs-4 text-white '>{driver.fullName}</td>

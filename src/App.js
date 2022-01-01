@@ -34,7 +34,7 @@ function App() {
             <Route path="/dashboard/riders" element={<AdminRoute><RiderShow /></AdminRoute>} />
             <Route path="/dashboard/newDrivers" element={<AdminRoute><NewDrivers /></AdminRoute>} />
             {/* <Route path="/about" element={<About />} />
-            <Route path="/details/:id" element={<Details />} /> */}
+             */}
           </Route>
 
           <Route path="*" element={<Nopage />} />

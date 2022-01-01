@@ -9,3 +9,17 @@
     background-color: rgb(43, 43, 224);
     color: white;
 }
+
+/* search div style */
+.searchDiv{
+    /* background-color:rgba(0, 0, 0, 0.889); */
+    text-align: center;
+    height: 80px;
+    margin-top: -25px;
+}
+.search{
+    /* width: 800px; */
+    height: 45px;
+    line-height: 30px;
+    border-radius: 18px ;
+}
