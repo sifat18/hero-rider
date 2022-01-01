@@ -16,6 +16,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import RiderShow from './Components/RiderShow/RiderShow';
 import NewDrivers from './Components/NewDriver/NewDrivers';
 import Welcome from './Components/Welcome/Welcome';
+import AdminRoute from './Components/AdminRoute/AdminRoute';
 function App() {
   return (
 
@@ -29,13 +30,10 @@ function App() {
           <Route path="/driveRegister" element={<Driving />} />
           <Route path="/dashboard" element={<PrivateRoute><SharedDash /></PrivateRoute>} >
             <Route path="/dashboard" element={<Welcome />} />
-            <Route path="/dashboard/admin" element={<Home />} />
-            <Route path="/dashboard/riders" element={<RiderShow />} />
-            <Route path="/dashboard/newDrivers" element={<NewDrivers />} />
+            <Route path="/dashboard/admin" element={<AdminRoute><Home /></AdminRoute>} />
+            <Route path="/dashboard/riders" element={<AdminRoute><RiderShow /></AdminRoute>} />
+            <Route path="/dashboard/newDrivers" element={<AdminRoute><NewDrivers /></AdminRoute>} />
             {/* <Route path="/about" element={<About />} />
-            <Route path="/project" element={<Project />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blogs" element={<Blogs />} />
             <Route path="/details/:id" element={<Details />} /> */}
           </Route>
 
