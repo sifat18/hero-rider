@@ -22,8 +22,8 @@ const SharedDash = () => {
                     <div className="sidebar-heading  text-center py-4 primary-text fs-4 fw-bold text-uppercase">
                         <i class="fas fa-user-secret"></i>{user.displayName}
                     </div>
-                    <ListGroup variant="flush" className='me-5'>
-                        <NavLink to='/home' ><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={"home"} alt='' /> Home</ListGroup.Item></NavLink>
+                    <ListGroup variant="flush" className='me-3'>
+                        {/* <NavLink to='/dashboard' ><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={"home"} alt='' /> MakeAdmin</ListGroup.Item></NavLink> */}
                         {/* user routes*/}
                         {!admin && <div>
                             <NavLink to={`/pay`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cash'} height='20' width='20' alt='' /> Pay</ListGroup.Item></NavLink>
@@ -33,7 +33,7 @@ const SharedDash = () => {
                         {/* admin routes*/}
                         {admin && <div>
 
-                            <NavLink to={`/makeAdmin`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
                             <NavLink to={`/addProduct`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Add Product</ListGroup.Item></NavLink>
                             <NavLink to={`/manageAllOrder`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'order'} height='20' width='20' alt='' /> Manage AllOrders</ListGroup.Item></NavLink>
                             <NavLink to={`/manageProducts`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'delet'} height='20' width='20' alt='' /> Manage Product</ListGroup.Item></NavLink>

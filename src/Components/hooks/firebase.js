@@ -23,7 +23,7 @@ const useFirebase = () => {
                 seterror('');
                 const newUser = { email, displayName: name };
                 setuser(newUser);
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
                 setName(name)
                 navigate('/dashboard');
                 // ...
@@ -96,11 +96,11 @@ const useFirebase = () => {
     }, [auth])
 
 
-    // useEffect(() => {
-    //     fetch(`https://vast-everglades-95998.herokuapp.com/user/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
-    // }, [user.email])
+    useEffect(() => {
+        fetch(`http://localhost:8000/user/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
     // signoUT
     const logOut = () => {
@@ -114,17 +114,17 @@ const useFirebase = () => {
         });
     }
 
-    // const saveUser = (email, displayName, method) => {
-    //     const userData = { email, displayName };
-    //     fetch('https://vast-everglades-95998.herokuapp.com/user', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(userData)
-    //     })
-    //         .then()
-    // }
+    const saveUser = (email, displayName, method) => {
+        const userData = { email, displayName };
+        fetch('http://localhost:8000/user', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then()
+    }
     return {
         user,
         isLoading,
