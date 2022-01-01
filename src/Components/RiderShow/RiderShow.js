@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Container, Table, } from 'react-bootstrap';
 import './ride.css'
 const RiderShow = () => {
+    // table count
     let count = 0;
-
+    // state variables 
     const [riders, setRiders] = useState([])
     const size = 10;
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
+    // fetching limited data
     useEffect(() => {
         fetch(`https://hidden-reef-13109.herokuapp.com/rider?page=${page}&&size=${size}`).then(res => res.json()).then(data => {
             setRiders(data.riders)
@@ -23,6 +25,8 @@ const RiderShow = () => {
             <h2 className='text-center '> Registered Riders</h2>
             <hr className='d-block w-25 mb-5 mx-auto' />
             <Table responsive striped bordered hover >
+
+                {/* table header */}
                 <thead>
                     <tr className='text-center'>
                         <th className='fs-3 text-white'>Sl</th>
@@ -31,10 +35,11 @@ const RiderShow = () => {
                         <th className='fs-3 text-white'>email</th>
                         <th className='fs-3 text-white'>phone</th>
                         <th className='fs-3 text-white'>action</th>
-                        {/* <th className='fs-3 text-white'>Delete</th> */}
                     </tr>
                 </thead>
                 <tbody>
+                    {/* looping data */}
+
                     {riders.map(rider =>
                         <tr key={rider._id} className='text-center'>
                             <td className='fs-4 text-white '>{++count}</td>
@@ -48,11 +53,11 @@ const RiderShow = () => {
 
                                 </div>
                             </td>
-                            {/* <td className='fs-4 text-white '><button type='button' onClick={() => getmodal(product?._id)} className='d-block border-0 mx-auto'>delete</button></td> */}
                         </tr>
                     )}
                 </tbody>
             </Table>
+            {/* page number buttons */}
             <div className="pagination">
                 {
                     [...Array(pageCount).keys()]

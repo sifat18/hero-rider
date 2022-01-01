@@ -8,7 +8,7 @@ import useAuth from '../Context/useAuth';
 
 
 const Rider = () => {
-    // const formData = new FormData();
+    // states 
     const [registerData, setregisterData] = useState({});
     const [passError, setpassError] = useState('');
     const [drivingPic, setDrivingPic] = useState(null);
@@ -17,6 +17,8 @@ const Rider = () => {
     const history = useNavigate();
     const { createUser } = useAuth();
     let repassword;
+
+    // dynamically setting fields 
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -26,7 +28,7 @@ const Rider = () => {
         // console.log(loginData)
 
     }
-
+    // checking passwords
     const hadlePass = e => {
         console.log(e.target.value);
         repassword = e.target.value;
@@ -39,6 +41,8 @@ const Rider = () => {
 
         }
     }
+
+    // submitting data
     const handleLoginSubmit = e => {
         e.preventDefault()
         const formData = new FormData();
@@ -92,7 +96,6 @@ const Rider = () => {
                         <label for="formFile" class="form-label text-white">Profile Pic</label>
                         <input class="form-control " type="file" id="formFile" name='profilePic' onChange={e => setProfilePic(e.target.files[0])} />
                     </div>
-                    {/* <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='Driving license picture' name="drivingPic" id="drivingPic" /> */}
 
                     <input required className='inputs my-4 w-50' type="password" onChange={handleOnChange} placeholder='password' name="pass" id="pass" />
                     <input required className='inputs my-4 w-50' type="password" onBlur={hadlePass} placeholder='re-enter password' name="re-pass" id="pass" />

@@ -3,10 +3,14 @@ import { Container, Table, } from 'react-bootstrap';
 
 const NewDrivers = () => {
     let count = 0;
+    // state variables 
     const [newDriver, setnewDriver] = useState([])
     const size = 10;
     const [page, setPage] = useState(0);
     const [pageCount, setPageCount] = useState(0);
+
+    // fetching limited data
+
     useEffect(() => {
         fetch(`https://hidden-reef-13109.herokuapp.com/driver?page=${page}&&size=${size}`).then(res => res.json()).then(data => {
             setnewDriver(data.drivers);
@@ -20,6 +24,7 @@ const NewDrivers = () => {
         <Container data-aos="flip-right" fluid className='pt-3   text-center allorderbg'>
             <h2 className='text-center '> Registered Drivers for lesson</h2>
             <hr className='d-block w-50 mb-5 mx-auto' />  <Table responsive striped bordered hover >
+                {/* table header */}
                 <thead>
                     <tr className='text-center'>
                         <th className='fs-3 text-white'>Sl</th>
@@ -32,6 +37,7 @@ const NewDrivers = () => {
                     </tr>
                 </thead>
                 <tbody>
+                    {/* looping data */}
                     {newDriver.map(driver =>
                         <tr key={driver._id} className='text-center'>
                             <td className='fs-4 text-white '>{++count}</td>
@@ -48,6 +54,8 @@ const NewDrivers = () => {
                     )}
                 </tbody>
             </Table>
+            {/* page number buttons */}
+
             <div className="pagination">
                 {
                     [...Array(pageCount).keys()]

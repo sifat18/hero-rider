@@ -8,10 +8,13 @@ import pic2 from './login.svg';
 import useAuth from '../Context/useAuth';
 import './login.css'
 const Login = () => {
+    // states
     const [LoginData, setLoginData] = useState({});
     const { emailPass, error } = useAuth()
     const location = useLocation();
     let navigate = useNavigate();// const redirect_url = location.state?.from || '/home';
+
+    //    dynamically setting values
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -21,9 +24,7 @@ const Login = () => {
         // console.log(loginData)
 
     }
-    // const handleLogin = () => {
-    //     signGoogle(location, navigate)
-    // }
+    // submitting data
     const handleLoginSubmit = e => {
         e.preventDefault()
         console.log(LoginData);
@@ -44,7 +45,9 @@ const Login = () => {
                 </form>
                 <div className='text-center mt-3 '>
                     <p className='fs-3 fw-nromal text-success'>New user? </p>
-                    {/* <NavLink to='/register'>Click me</NavLink></p> */}
+
+
+                    {/* register by catergory */}
                     <NavLink to='/riderRegister'> <button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as Rider</button></NavLink>
                     <NavLink to='/driveRegister'><button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as NewDriver</button></NavLink>
                 </div>

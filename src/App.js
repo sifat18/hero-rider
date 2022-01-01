@@ -18,9 +18,12 @@ import NewDrivers from './Components/NewDriver/NewDrivers';
 import Welcome from './Components/Welcome/Welcome';
 function App() {
   return (
+
+    // setting central state management
     <Authprovider className="App">
       <BrowserRouter>
         <Routes>
+          {/* routing */}
           <Route path="/" element={<Login />} />
           <Route path="/riderRegister" element={<Rider />} />
           <Route path="/driveRegister" element={<Driving />} />
