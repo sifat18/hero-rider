@@ -20,7 +20,6 @@ const Rider = () => {
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
-        // formData.append(field, value);
         const newRegisterData = { ...registerData };
         newRegisterData[field] = value;
         setregisterData(newRegisterData);
