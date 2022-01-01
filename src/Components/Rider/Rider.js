@@ -71,7 +71,7 @@ const Rider = () => {
         <Container fluid className='explore-body'>
             <Container className='my-5 py-2'>
                 {/* register form */}
-                <h2 className='text-center fs-1 fw-bold'><img src={pic1} alt="" height='60' width='60' /><span className='textColor'>Rider </span>Register</h2>
+                <h2 className='text-center fs-1 fw-bold text-white'><img src={pic1} alt="" height='60' width='60' /><span className='textColor'>Rider </span>Register</h2>
                 <hr className='mx-auto w-25' />
                 <form className='mt-3 pt-2  py-3' onSubmit={handleLoginSubmit}>
                     <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='FullNANME' name="name" id="name" />
@@ -84,15 +84,15 @@ const Rider = () => {
                     <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='vehicle name' name="vehicleName" id="vehicleName" />
                     <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='vehicle Model' name="vehicleModel" id="vehicleModel" />
                     <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='name palate' name="namePalate" id="namePalate" />
-                    <div class="inputs my-4 ">
+                    <div className="inputs my-4 ">
                         <label for="formFile" class="form-label text-white">Driving License Pic</label>
                         <input class="form-control " type="file" id="formFile" name='drivingPic' onChange={e => setDrivingPic(e.target.files[0])} />
                     </div>
-                    <div class="inputs my-4 ">
+                    <div className="inputs my-4 ">
                         <label for="formFile" class="form-label text-white">NID Pic</label>
                         <input class="form-control " type="file" id="formFile" name='nidPic' onChange={e => setNidPic(e.target.files[0])} />
                     </div>
-                    <div class="inputs my-4 ">
+                    <div className="inputs my-4 ">
                         <label for="formFile" class="form-label text-white">Profile Pic</label>
                         <input class="form-control " type="file" id="formFile" name='profilePic' onChange={e => setProfilePic(e.target.files[0])} />
                     </div>

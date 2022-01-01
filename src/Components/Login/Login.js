@@ -34,7 +34,7 @@ const Login = () => {
         <Container fluid className='explore-body'>
             <Container className='my-5 py-2'>
                 {/* register form */}
-                <h2 className='text-center fs-1 fw-bold'><img src={pic1} alt="" height='60' width='60' /><span className='textColor'>Log</span>in</h2>
+                <h2 className='text-center fs-1 fw-bold text-white'><img src={pic1} alt="" height='60' width='60' /><span className='textColor'>Log</span>in</h2>
                 <hr className='mx-auto w-25' />
                 <form className='mt-3 pt-2  py-3' onSubmit={handleLoginSubmit}>
                     <input required className='inputs my-4 w-50' type="text" onChange={handleOnChange} placeholder='email' name="email" id="email" />
@@ -48,8 +48,8 @@ const Login = () => {
 
 
                     {/* register by catergory */}
-                    <NavLink to='/riderRegister'> <button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as Rider</button></NavLink>
-                    <NavLink to='/driveRegister'><button className='btn bg-google mx-2 border border-1 mb-5 text-white'> <img src="{google}" alt="" height='30' width='30' /> Register as NewDriver</button></NavLink>
+                    <NavLink to='/riderRegister'> <button className='btn bg-google mx-2 border border-1 mb-5 text-white'><i className="fas fa-biking"></i> Register as Rider</button></NavLink>
+                    <NavLink to='/driveRegister'><button className='btn bg-google mx-2 border border-1 mb-5 text-white'><i className="fas fa-baby"></i> Register as NewDriver</button></NavLink>
                 </div>
             </Container>
         </Container>

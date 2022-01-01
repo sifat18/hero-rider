@@ -26,16 +26,16 @@ const SharedDash = () => {
                     <ListGroup variant="flush" className='me-3'>
                         {/* user routes*/}
                         {!admin && <div>
-                            <NavLink to={`/dashboard`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Home</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><i class="fas fa-home"></i> Home</ListGroup.Item></NavLink>
                         </div>}
                         {/* admin routes*/}
                         {admin && <div>
 
-                            <NavLink to={`/dashboard/admin`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'plus'} height='20' width='20' alt='' /> Add Admin</ListGroup.Item></NavLink>
-                            <NavLink to={`/dashboard/riders`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><img src={'cart'} height='20' width='20' alt='' /> Registered Riders </ListGroup.Item></NavLink>
-                            <NavLink to={`/dashboard/newDrivers`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><img src={'order'} height='20' width='20' alt='' /> Registered New Drivers</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/admin`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><i className="fas fa-user-lock"></i> Add Admin</ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/riders`}><ListGroup.Item className=' border-end-0 border-top-0 border-start-0'><i className="fas fa-biking"></i> Registered Riders </ListGroup.Item></NavLink>
+                            <NavLink to={`/dashboard/newDrivers`}><ListGroup.Item className='border-end-0 border-top-0 border-start-0'><i className="fas fa-baby"></i> Registered New Drivers</ListGroup.Item></NavLink>
                         </div>}
-                        <ListGroup.Item onClick={logOut} className='point '><img src={'out'} height='20' width='20' alt='' /> LogOut</ListGroup.Item>
+                        <ListGroup.Item onClick={logOut} className='point '><i class="fas fa-sign-out-alt"></i> LogOut</ListGroup.Item>
                     </ListGroup>
                 </Container>
             </Row >
