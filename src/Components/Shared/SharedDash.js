@@ -17,9 +17,7 @@ const SharedDash = () => {
             <Row id="sidebar-wrapper">
                 <Container className='text-center  siding'>
 
-                    {/* <div className="profile">
-                    <img src={avatar} alt="" className='img-fluid ' />
-                </div> */}
+
                     <nav className="nav mt-5 pt-5">
                         <ul className="nav-items">
                             <li className="nav-item">
