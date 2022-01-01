@@ -18,7 +18,8 @@ const NewDrivers = () => {
     }, [page])
     return (
         <Container data-aos="flip-right" fluid className='pt-3   text-center allorderbg'>
-            <Table responsive striped bordered hover >
+            <h2 className='text-center '> Registered Drivers for lesson</h2>
+            <hr className='d-block w-50 mb-5 mx-auto' />  <Table responsive striped bordered hover >
                 <thead>
                     <tr className='text-center'>
                         <th className='fs-3 text-white'>Sl</th>
@@ -26,7 +27,8 @@ const NewDrivers = () => {
                         <th className='fs-3 text-white'>age</th>
                         <th className='fs-3 text-white'>email</th>
                         <th className='fs-3 text-white'>phone</th>
-                        {/* <th className='fs-3 text-white'>Delete</th> */}
+                        <th className='fs-3 text-white'>action</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -37,8 +39,12 @@ const NewDrivers = () => {
                             <td className='fs-4 text-white '>{driver.age}</td>
                             <td className='fs-4 text-white '>{driver.email}</td>
                             <td className='fs-4 text-white '>{driver.phone}</td>
-                            {/* <td className='fs-4 text-white '><button type='button' onClick={() => getmodal(product?._id)} className='d-block border-0 mx-auto'>delete</button></td> */}
-                        </tr>
+                            <td className='fs-4 text-white '>
+                                <div className="form-check ">
+                                    <input className="form-check-input mx-auto" type="checkbox" value="" id="flexCheckDefault" />
+
+                                </div>
+                            </td></tr>
                     )}
                 </tbody>
             </Table>

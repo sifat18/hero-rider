@@ -20,6 +20,8 @@ const RiderShow = () => {
 
     return (
         <Container data-aos="flip-right" fluid className='pt-3   text-center allorderbg'>
+            <h2 className='text-center '> Registered Riders</h2>
+            <hr className='d-block w-25 mb-5 mx-auto' />
             <Table responsive striped bordered hover >
                 <thead>
                     <tr className='text-center'>
